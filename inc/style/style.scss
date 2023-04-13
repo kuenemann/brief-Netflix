@@ -1,0 +1,175 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav Barre */
+
+.menu{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  left: 10px;
+}
+
+nav {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo a {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.menu li a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #ff5500;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 60px;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    font-size: 22px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: flex;
+  }
+}
+
+/* fin de nav barre  */
+
+/*  colonne film popular */
+
+.movie-info {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  overflow:auto;
+
+  }
+
+  /* Style pour la barre de défilement */
+::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
+
+/* Style pour le rail de la barre de défilement */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Couleur de fond du rail */
+  border-radius: 10px; /* Arrondir les bords du rail */
+}
+
+/* Style pour le thumb de la barre de défilement */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Couleur de fond du thumb */
+  border-radius: 10px; /* Arrondir les bords du thumb */
+}
+
+/* Style pour le thumb de la barre de défilement au survol */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Couleur de fond du thumb au survol */
+}
+
+  
+  nav {
+  background-color: #333;
+  overflow: hidden;
+  }
+  
+  .navbar-header {
+  display: inline-block;
+  }
+  
+  .navbar-brand {
+  display: inline-block;
+  color: white;
+  font-size: 2em;
+  padding: 1%;
+  margin-right: 5%;
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+  
+  
+  .image-class {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 5%;
+  }
+  
+  .navbar-brand {
+  margin-right: 0;
+  }
+  }
+
+
+/* fin colonne film popular */
+
+
+

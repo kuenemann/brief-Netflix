@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "sass": "^1.62.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "bulma-carousel": "^4.0.24"
+  }
+}
