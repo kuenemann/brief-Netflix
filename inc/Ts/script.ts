@@ -10,7 +10,7 @@ const TopRated = `https://api.themoviedb.org/3/movie/top_rated?${apiKey}&languag
 /* film A venir */
 const UpComing = `https://api.themoviedb.org/3/movie/upcoming?${apiKey}&language=fr-FR&page=1`;
 
-const Moreview = ``;
+/* const Moreview = ``; */
 
 /* début de film populaire */
 async function getDataPopular() {
@@ -19,10 +19,11 @@ async function getDataPopular() {
     const data = await response.json();
 
     const tableauEntier = data.results;
-    console.log(tableauEntier);
-
-    for (let i = 0; i < tableauEntier.length; i++) {
-      const div = document.createElement("div");
+    /* console.log(tableauEntier); */
+    let movieId;
+    for (let i = 0; i < tableauEntier.length; i++){ 
+    movieId = tableauEntier[i].id;
+    const div = document.createElement("div");
       document.getElementById("moviepopular")?.appendChild(div);
       div.classList.add("popularMovie");
       const img = document.createElement("img");
@@ -30,81 +31,54 @@ async function getDataPopular() {
       const imagePath = baseUrlImage + tableauEntier[i].poster_path;
 
       img.setAttribute("src", imagePath);
+      document.querySelector(".popularMovie")?.appendChild(img);
+       
+      /* écouteurs de click sur les images  */
       img.addEventListener("click", async () => {
         console.log(tableauEntier[i].id);
 
-        const filmId = tableauEntier[i].id;
-        const filmUrl = `${baseUrl}movie/${filmId}?api_key=${apiKey}`;
-        console.log(filmUrl);
-
-        // Récupérer les informations du film en utilisant l'ID
-        const response = await fetch(filmUrl);
-        const data = await response.json();
-
-        // Création de la popup pour afficher les informations du film//
+      });
+         // Écoutez le clic sur l'image
+      img.addEventListener("click", async () => {
+        // Créez une div pour la popup
         const popup = document.createElement("div");
         popup.classList.add("popup");
-        console.log(popup);
 
-        // Ajout des informations du film à la popup//
-        const titre = document.createElement("h1");
-        titre.textContent = data.original_title;
-        popup.appendChild(titre);
+        // Ajoutez le titre du film à la popup
+        const title = document.createElement("h2");
+        title.textContent = tableauEntier[i].title;
+        popup.appendChild(title);
 
-        const réalisateur = document.createElement("p");
-        réalisateur.textContent = `Réalisateur : ${data.director}`;
-        popup.appendChild(réalisateur);
+        // Ajoutez la description du film à la popup
+        const overview = document.createElement("p");
+        overview.textContent = tableauEntier[i].overview;
+        popup.appendChild(overview);
 
-        const dateSortie = document.createElement("p");
-        dateSortie.textContent = `Date de sortie : ${data.release_date}`;
-        popup.appendChild(dateSortie);
-        
-        const note = document.createElement("p");
-        note.textContent = `Note : ${data.vote_average}`;
-        popup.appendChild(note);
-        
-        const synopsis = document.createElement("p");
-        synopsis.textContent = data.overview;
-        popup.appendChild(synopsis);
+        // Ajoutez un bouton de fermeture à la popup
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Fermer";
+        closeButton.addEventListener("click", () => {
+          popup.remove();
+        });
+        popup.appendChild(closeButton);
 
-        // Affichage de la popup//
+        // Ajoutez la popup à la page
         document.body.appendChild(popup);
-
-
-        // Création du bouton "Fermer"
-const closeButton = document.createElement("span");
-closeButton.textContent = "Fermer";
-closeButton.classList.add("close-button");
-popup.appendChild(closeButton);
-
-// Ajout de l'écouteur d'événements pour le bouton "Fermer"
-closeButton.addEventListener("click", () => {
-  popup.remove(); // Supprime la popup de la page
-});
-
-// Ajout de l'écouteur d'événements pour la popup
-popup.addEventListener("click", (event) => {
-  // Vérifie si l'événement est sur le contenu de la popup ou le bouton "Fermer"
-  if (!event.target?.closest(".popup-content")) {
-    popup.remove(); // Supprime la popup de la page
-  }
-});
-
       });
-
-        
-
-      document.querySelector(".popularMovie")?.appendChild(img);
     }
   } catch (error) {
     console.error(error);
   }
 }
-
 getDataPopular();
 
 
 /*fin de film populaire */
+
+
+
+
+
 
 /* début de film les mieux notés */
 
@@ -135,6 +109,13 @@ getTopRated();
 
 /* fin de film les mieux notés */
 
+
+
+
+
+
+
+
 /* début de film a venir */
 
 async function getUpComing() {
@@ -161,4 +142,3 @@ async function getUpComing() {
 }
 
 getUpComing();
-/* fin de film a venir */
