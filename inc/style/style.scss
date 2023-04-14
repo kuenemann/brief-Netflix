@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,7 @@
 
 /* Nav Barre */
 
-.menu{
+.menu {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -95,81 +94,161 @@ nav {
     font-size: 22px;
   }
 
-  input[type="checkbox"]:checked ~ .menu {
+  input[type="checkbox"]:checked~.menu {
     display: flex;
   }
 }
 
 /* fin de nav barre  */
 
-/*  colonne film popular */
+/* couleur de fond  */
+.couleur-de-fond {
+  background-color: black;
+}
 
-.movie-info {
-  margin-top: 100px;
+/* heros-banner */
+
+.heros {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url(/inc/img/star_wars_Yoda.jpeg);
+  height: 70vh;
+}
+/* fin du Heros banner */
+
+/*film popular */
+.popularMovie {
   display: flex;
   flex-direction: row;
-  gap: 5px;
-  overflow:auto;
+  /* gap: 5px; */
+  overflow: auto;
+}
+/* Film les mieux Noté */
+.RatedTop {
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: row;
+  /* gap: 5px; */
+  overflow: auto;
+}
+/* style pour tous mes H1 */
+.populaire-film,
+h1 {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #2E4600
+}
 
-  }
+/* film A Venir */
+.ComingUp{
+  display: flex;
+  flex-direction: row;
+  /* gap: 5px; */
+  overflow: auto;
+}
 
-  /* Style pour la barre de défilement */
+
+/* Style pour la barre de défilement */
 ::-webkit-scrollbar {
-  width: 8px; /* Largeur de la barre de défilement */
+  width: 8px;
+  /* Largeur de la barre de défilement */
 }
 
 /* Style pour le rail de la barre de défilement */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Couleur de fond du rail */
-  border-radius: 10px; /* Arrondir les bords du rail */
+  border-radius: 10px;
+  /* Arrondir les bords du rail */
 }
 
 /* Style pour le thumb de la barre de défilement */
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Couleur de fond du thumb */
-  border-radius: 10px; /* Arrondir les bords du thumb */
+  background: #888;
+  /* Couleur de fond du thumb */
+  border-radius: 10px;
+  /* Arrondir les bords du thumb */
 }
 
 /* Style pour le thumb de la barre de défilement au survol */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Couleur de fond du thumb au survol */
+  background: #555;
+  /* Couleur de fond du thumb au survol */
 }
+/* fin Style pour la barre de défilement  */
 
-  
-  nav {
+nav {
   background-color: #333;
   overflow: hidden;
-  }
-  
-  .navbar-header {
+}
+
+.navbar-header {
   display: inline-block;
-  }
-  
-  .navbar-brand {
+}
+
+.navbar-brand {
   display: inline-block;
   color: white;
   font-size: 2em;
   padding: 1%;
   margin-right: 5%;
-  }
-  
-  
-  @media only screen and (max-width: 768px) {
-  
-  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
   .image-class {
-  width: 100%;
-  margin-right: 0;
-  margin-bottom: 5%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5%;
   }
-  
+
   .navbar-brand {
-  margin-right: 0;
+    margin-right: 0;
   }
-  }
+}
 
 
 /* fin colonne film popular */
 
+/* création de ma popup */
+.popup {
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 999; 
+  background-color:darkslategrey; 
+  padding: 20px; 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
+.popup h1 {
+  font-size: 24px; /* taille de police pour le titre */
+  margin-bottom: 10px; /* espacement entre le titre et les autres éléments */
+}
 
+.popup p {
+  font-size: 16px; 
+  margin-bottom: 10px; 
+}
+
+.popup img {
+  max-width: 100%; 
+}
+/* bouton de fermeture de ma popup */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color:#ff5500;
+}

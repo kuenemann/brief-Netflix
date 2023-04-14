@@ -10,22 +10,41 @@
 </head>
 
 <body>
-  <nav>
-    <div class="logo">
-      <a href="#">Liflix</a>
-    </div>
-    <label class="menu-icon">&#9776;</label>
-    <ul class="menu">
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Films</a></li>
-    </ul>
-  </nav>
 
-  <div id="movie-info" class="movie-info"></div>
-  <footer>
-    <p>&copy; Ma plateforme de film - 2023</p>
-  </footer>
-  <script src="/inc/Ts/script.ts"></script>
+  <div class="couleur-de-fond">
+    <div class="heros-banner">
+      <div class="heros">
+      </div>
+      <nav>
+        <div class="logo">
+          <a href="#">Liflix</a>
+        </div>
+        <label class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Films</a></li>
+        </ul>
+      </nav>
+      <div class="populaire-film">
+        <h1>Film-Populaire</h1>
+        <div id="moviepopular" class="popularMovie"></div>
+      </div>
+      <div class="Les-Mieux-Notés">
+        <h1>Les Mieux Notés</h1>
+        <div id="TopRated" class="RatedTop"></div>
+      </div>
+
+      <div class="A-venir">
+        <h1>A Venir</h1>
+        <div id="UpComing" class="ComingUp"></div>
+      </div>
+      
+      <footer>
+        <p>&copy; Ma plateforme de film - 2023</p>
+      </footer>
+      <script src="/inc/Ts/script.ts"></script>
+    </div>
+  </div>
 </body>
 
 </html>
