@@ -218,7 +218,8 @@ nav {
 /* fin colonne film popular */
 
 /* création de ma popup */
-.popup {
+.popup{
+  max-height: 90vh;
   position: fixed; 
   top: 50%; 
   left: 50%; 
@@ -228,11 +229,8 @@ nav {
   padding: 20px; 
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.popup h1 {
-  font-size: 24px; /* taille de police pour le titre */
-  margin-bottom: 10px; /* espacement entre le titre et les autres éléments */
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .popup p {
@@ -240,15 +238,61 @@ nav {
   margin-bottom: 10px; 
 }
 
-.popup img {
-  max-width: 100%; 
-}
 /* bouton de fermeture de ma popup */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+button {
+  button {
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff5500;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    button {
+      position: relative;
+      top: auto;
+      right: auto;
+      font-size: 14px;
+    }
+  }
+  
+}
+/* fin bouton de fermeture de la popup */
+
+
+/* Style pour l'élément input de type text */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  border-radius: 4px;
+  padding: 15px;
+  margin-left: 16px;
+  margin-right: 10px;
+  font-size: 6px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 11px;
   cursor: pointer;
-  font-size: 16px;
-  color:#ff5500;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.popup-description {
+  max-height: 300px;
+  overflow-y: scroll;
 }
