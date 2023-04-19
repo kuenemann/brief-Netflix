@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.4",
-    "bulma-carousel": "^4.0.24"
+    "bulma-carousel": "^4.0.24",
+    "jquery": "^3.6.4"
   }
 }

@@ -119,6 +119,7 @@ nav {
   background-image: url(/inc/img/star_wars_Yoda.jpeg);
   height: 70vh;
 }
+
 /* fin du Heros banner */
 
 /*film popular */
@@ -128,6 +129,7 @@ nav {
   /* gap: 5px; */
   overflow: auto;
 }
+
 /* Film les mieux Noté */
 .RatedTop {
   /* margin-top: 100px; */
@@ -136,6 +138,7 @@ nav {
   /* gap: 5px; */
   overflow: auto;
 }
+
 /* style pour tous mes H1 */
 .populaire-film,
 h1 {
@@ -147,7 +150,7 @@ h1 {
 }
 
 /* film A Venir */
-.ComingUp{
+.ComingUp {
   display: flex;
   flex-direction: row;
   /* gap: 5px; */
@@ -180,6 +183,7 @@ h1 {
   background: #555;
   /* Couleur de fond du thumb au survol */
 }
+
 /* fin Style pour la barre de défilement  */
 
 nav {
@@ -218,34 +222,29 @@ nav {
 /* fin colonne film popular */
 
 /* création de ma popup */
-.popup{
+.popup {
   max-height: 90vh;
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  z-index: 999; 
-  background-color:darkslategrey; 
-  padding: 20px; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: darkslategrey;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-height: 300px;
-    overflow-y: scroll;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
 .popup p {
-  font-size: 16px; 
-  margin-bottom: 10px; 
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 /* bouton de fermeture de ma popup */
 button {
-  button {
-    cursor: pointer;
-    font-size: 16px;
-    color: #ff5500;
-  }
-  
+ 
   @media only screen and (max-width: 768px) {
     button {
       position: relative;
@@ -254,45 +253,28 @@ button {
       font-size: 14px;
     }
   }
-  
 }
+
 /* fin bouton de fermeture de la popup */
 
 
-/* Style pour l'élément input de type text */
-
-.search-bar {
+ul {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
 }
 
-.search-bar input[type="text"] {
-  border: none;
-  border-radius: 4px;
-  padding: 15px;
-  margin-left: 16px;
-  margin-right: 10px;
-  font-size: 6px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+li {
+  width: 50%;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-.search-bar button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 12px;
-  font-size: 11px;
-  cursor: pointer;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+img {
+  width: 100%;
+  height: auto;
 }
 
-.search-bar button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
 
-.popup-description {
-  max-height: 300px;
-  overflow-y: scroll;
-}

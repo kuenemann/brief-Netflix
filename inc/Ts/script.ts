@@ -1,20 +1,42 @@
-import { error } from "jquery";
+import { error, event } from "jquery";
 import { apiKey } from "./api";
 /* base url */
 const baseUrl = `https://api.themoviedb.org/3/`;
 /* url imge */
 const baseUrlImage = `https://image.tmdb.org/t/p/w185/`;
 /* les plus populaire */
-const popularMovie = `https://api.themoviedb.org/3/movie/popular?${apiKey}&language=fr-FR&page=1`;
+const popularMovie = `${baseUrl}movie/popular?${apiKey}&language=fr-FR&page=1`;
 /* les Mieux Notés  */
-const TopRated = `https://api.themoviedb.org/3/movie/top_rated?${apiKey}&language=fr-FR&page=1`;
+const TopRated = `${baseUrl}movie/top_rated?${apiKey}&language=fr-FR&page=1`;
 /* film A venir */
-const UpComing = `https://api.themoviedb.org/3/movie/upcoming?${apiKey}&language=fr-FR&page=1`;
-/* api recherche */
-const searchMovie = `https://api.themoviedb.org/3/search/movie?${apiKey}&language=fr-FR&page=1&include_adult=false`;
+const UpComing = `${baseUrl}movie/upcoming?${apiKey}&language=fr-FR&page=1`;
+/* api recherche films*/
 
-/* const Moreview = ``; */
-console.log(popularMovie);
+// Fonction pour effectuer une recherche de film //
+const searchInput = document.getElementById("search-input") as HTMLInputElement;
+const searchbtn = document.getElementById('search-btn')
+
+searchbtn?.addEventListener("click",async()=>{
+  const query: any = searchInput.value
+  const searchMovie = `${baseUrl}search/movie?${apiKey}&language=fr-FR&query=${query}&page=1&include_adult=false`;
+  const response = await fetch(searchMovie);
+  const data = await response.json();
+  const afftableaux = data.results;
+  console.log(afftableaux);
+  
+
+  const resultList = document.createElement('div2');
+  afftableaux.forEach((item) => {
+    const listItem = document.createElement('li');
+    const image = document.createElement('img');
+    image.src = item.poster_path;
+    listItem.appendChild(image);
+    resultList.appendChild(listItem);
+  });
+
+  document.body.appendChild(resultList);
+});
+
 
 /* début de film populaire */
 async function getDataPopular() {
@@ -23,11 +45,12 @@ async function getDataPopular() {
     const data = await response.json();
 
     const tableauEntier = data.results;
-    console.log(tableauEntier);
+    /* console.log(tableauEntier); */
+
     let movieId;
     for (let i = 0; i < tableauEntier.length; i++) {
       movieId = tableauEntier[i].id;
-      console.log(movieId);
+     
 
       const div = document.createElement("div");
       document.getElementById("moviepopular")?.appendChild(div);
@@ -60,6 +83,8 @@ async function getDataPopular() {
         title.textContent = tableauEntier[i].title;
         popup.appendChild(title);
 
+        const title2 = document.createElement("h2");
+
         // Ajoutez la description du film à la popup
         const overview = document.createElement("p");
         overview.textContent = tableauEntier[i].overview;
@@ -80,7 +105,7 @@ async function getDataPopular() {
         document.body.appendChild(popup);
 
         // Créez une constante pour déterminer si la popup est affichée
-        const popupAffichee = true;
+        let popupAffichee = true;
 
         // Ajoutez la popup à la page
         document.body.appendChild(popup);
@@ -181,4 +206,14 @@ async function getUpComing() {
 }
 
 getUpComing();
+
+
+
+
+
+
+
+
+
+
 
