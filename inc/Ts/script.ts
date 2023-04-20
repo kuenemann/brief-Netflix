@@ -24,18 +24,36 @@ searchbtn?.addEventListener("click",async()=>{
   const afftableaux = data.results;
   console.log(afftableaux);
   
+  const popup: Window | null = window.open('', 'popup', 'width=500,height=500');
+  popup?.document.write('<h2>Résultats de recherche</h2>');
 
-  const resultList = document.createElement('div2');
+  const resultList = popup.document.createElement('ul');
   afftableaux.forEach((item) => {
-    const listItem = document.createElement('li');
-    const image = document.createElement('img');
-    image.src = item.poster_path;
+    const listItem = popup.document.createElement('li');
+    const image = popup.document.createElement('img');
+    image.src = baseUrlImage + item.poster_path;
     listItem.appendChild(image);
     resultList.appendChild(listItem);
+    console.log(listItem);
   });
 
-  document.body.appendChild(resultList);
+  popup?.document.body.appendChild(resultList);
+
+  const resetBtn = popup.document.createElement('button');
+  resetBtn.textContent = "Nouvelle recherche";
+  resetBtn.addEventListener('click', () => {
+    popup?.close();
+    window.location.reload();
+  });
+  popup?.document.body.appendChild(resetBtn);
 });
+
+
+
+/* création de la popup de l'input */
+
+
+
 
 
 /* début de film populaire */

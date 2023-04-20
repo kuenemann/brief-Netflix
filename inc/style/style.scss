@@ -13,24 +13,21 @@
 }
 
 nav {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   align-items: center;
   padding: 20px;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  height: 13%;
   width: 100%;
   z-index: 100;
 }
 
 .logo a {
-  color: #ffffff;
-  font-size: 28px;
+  color: red;
+  font-size: 40px;
   font-weight: bold;
   text-decoration: none;
+  
 }
 
 .menu-icon {
@@ -104,6 +101,7 @@ nav {
 /* couleur de fond  */
 .couleur-de-fond {
   background-color: black;
+  
 }
 
 /* heros-banner */
@@ -116,7 +114,7 @@ nav {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background-image: url(/inc/img/star_wars_Yoda.jpeg);
+  background-image: url(/inc/img/master_yoda_star_wars-wallpaper-1920x1080.jpg);
   height: 70vh;
 }
 
@@ -146,7 +144,8 @@ h1 {
   padding: 10px;
   margin: 10px;
   font-family: 'Courier New', Courier, monospace;
-  color: #2E4600
+  background-color: darkslategrey;
+  color: aliceblue;
 }
 
 /* film A Venir */
@@ -186,10 +185,6 @@ h1 {
 
 /* fin Style pour la barre de défilement  */
 
-nav {
-  background-color: #333;
-  overflow: hidden;
-}
 
 .navbar-header {
   display: inline-block;
@@ -244,7 +239,7 @@ nav {
 
 /* bouton de fermeture de ma popup */
 button {
- 
+
   @media only screen and (max-width: 768px) {
     button {
       position: relative;
@@ -254,27 +249,63 @@ button {
     }
   }
 }
-
 /* fin bouton de fermeture de la popup */
 
 
-ul {
-  list-style: none;
+/* style pour input button */
+.recherche {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
-li {
-  width: 50%;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-img {
+#search-input {
   width: 100%;
-  height: auto;
+  max-width: 400px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  outline: none;
+  margin-bottom: 10px;
 }
 
+#search-input:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
+#search-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color:cadetblue;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+#search-btn:hover {
+  background-color: #0069d9;
+}
+
+@media screen and (max-width: 768px) {
+  .recherche {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  #search-input {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+}
