@@ -15,11 +15,10 @@
 nav {
   flex-direction: row;
   align-items: center;
-  padding: 20px;
-  position: absolute;
-  height: 13%;
+  padding: 0px;
   width: 100%;
   z-index: 100;
+  background-color: darkslategrey;
 }
 
 .logo a {
@@ -27,7 +26,7 @@ nav {
   font-size: 40px;
   font-weight: bold;
   text-decoration: none;
-  
+
 }
 
 .menu-icon {
@@ -101,22 +100,45 @@ nav {
 /* couleur de fond  */
 .couleur-de-fond {
   background-color: black;
-  
+
 }
 
 /* heros-banner */
 
-.heros {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-image: url(/inc/img/master_yoda_star_wars-wallpaper-1920x1080.jpg);
-  height: 70vh;
+.heros-banner {
+  .heros {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-image: url(/inc/img/master_yoda_star_wars-wallpaper-1920x1080.jpg);
+    height: 80vh;
+  }
+
+  .modal {
+    display: flex;
+    display: none;
+
+
+      div {
+        display: flex;
+        width: auto;
+  
+        img {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        }
+  
+      }
+
+    
+  }
 }
+
 
 /* fin du Heros banner */
 
@@ -249,6 +271,7 @@ button {
     }
   }
 }
+
 /* fin bouton de fermeture de la popup */
 
 
@@ -257,12 +280,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 #search-input {
   width: 100%;
-  max-width: 400px;
+  max-width: 180px;
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -280,9 +303,9 @@ button {
 #search-btn {
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
-  background-color:cadetblue;
+  background-color: cadetblue;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -309,3 +332,8 @@ button {
     width: 100%;
   }
 }
+
+
+/* style pour élément de ma popup aprés recherche input  */
+
+/* Styles pour la popup */
